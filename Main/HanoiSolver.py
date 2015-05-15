@@ -1,10 +1,8 @@
 """
 Intended for Python 2.7.9
 
-Prototype code to be converted into C for use on an Arduino Uno
-
-Calculates the optimal number of disks and the time for each step
-based on how long the user would like the tower of hanoi puzzle to last for
+- Calculates the optimal number of disks and the time required for each step
+- considers start and end date of puzzle, as well as feasability of step times
 
 Author: Matthew Balshaw
 E-mail: matt@mbm.space
@@ -50,8 +48,9 @@ def GatherInputs():
 
     invalid = True
     while invalid:
-        fastestStepTime = raw_input("Fastest time for the longest step? (Integer please)\n")
-        desiredStepTime = raw_input("Desired step time?(Integer please)\n")
+        print "Remember, the more time between the fastest step time and the desired step time, the quicker robot will be able to catch up after a break!"
+        fastestStepTime = raw_input("Fastest time for the longest step?\n")
+        desiredStepTime = raw_input("Desired step time?\n")
         #fastestStepTime = 5
         #desiredStepTime = 10.0
         

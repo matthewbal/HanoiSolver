@@ -12,7 +12,6 @@ Updated: 16/May/2015
 """
 
 
-import time
 import datetime
 import math
 
@@ -21,40 +20,40 @@ def GatherInputs():
     
     invalid = True
     while invalid:
-        #currDate = raw_input("What is the date today? (DD-MM-YYYY)\n")
-        #currTime = raw_input("What is the time? (24hr ##:##)\n")
-        currDate = "01-01-2000"
-        currTime = "12:00"
+        currDate = raw_input("What is the date today? (DD-MM-YYYY)\n")
+        currTime = raw_input("What is the time? (24hr ##:##)\n")
+        #currDate = "01-01-2000"
+        #currTime = "12:00"
         
         strCurrDateTime = currDate + currTime
         try:
             currDateTime = datetime.datetime.strptime(strCurrDateTime, '%d-%m-%Y%H:%M')
-            print "Does ", currDateTime, "Look right?\n"
+            print "Does", currDateTime, "Look right?\n"
             invalid = False
         except:
             print "Invalid date/time configuration. Please try again\n\n"
 
     invalid = True
     while invalid:
-        #endDate = raw_input("What date would you like the puzzle to be solved? (DD/MM/YYYY)\n")
-        #endTime = raw_input("What time would you like the puzzle to be solved? (24hr ##:##)\n")
-        endDate = "01-01-2060"
-        endTime = "12:00"
+        endDate = raw_input("What date would you like the puzzle to be solved? (DD/MM/YYYY)\n")
+        endTime = raw_input("What time would you like the puzzle to be solved? (24hr ##:##)\n")
+        #endDate = "01-01-2060"
+        #endTime = "12:00"
         
         strEndDateTime = endDate + endTime
         try:
             endDateTime = datetime.datetime.strptime(strEndDateTime, '%d-%m-%Y%H:%M')
-            print "Does ", endDateTime, "Look right?\n"
+            print "Does", endDateTime, "Look right?\n"
             invalid = False
         except:
             print "Invalid date/time configuration. Please try again\n\n"
 
     invalid = True
     while invalid:
-        #fastestStepTime = raw_input("Fastest time for the longest step? (Integer please)\n")
-        #desiredStepTime = raw_input("Desired step time?(Integer please)\n")
-        fastestStepTime = 5
-        desiredStepTime = 10.0
+        fastestStepTime = raw_input("Fastest time for the longest step? (Integer please)\n")
+        desiredStepTime = raw_input("Desired step time?(Integer please)\n")
+        #fastestStepTime = 5
+        #desiredStepTime = 10.0
         
         try:
             fastestStepTime
@@ -92,7 +91,23 @@ def GatherInputs():
     timePerStep = timeBetween/stepsNeeded
 
     print "Each step should take", timePerStep, "Seconds"
+    print "\n\n\n"
 
     
 if __name__ == '__main__':
-    GatherInputs()
+    running = True
+    while running:
+        GatherInputs()
+        runAgain = raw_input("Press Enter to run again\n\n")
+        if runAgain != "":
+            running = False
+            
+
+
+
+
+
+
+
+
+    

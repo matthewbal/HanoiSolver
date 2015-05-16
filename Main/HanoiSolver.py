@@ -91,7 +91,7 @@ def GatherInputs():
 
     print "Each step should take", timePerStep, "Seconds"
 
-    print "Assuming you can get step accuracy to 0.0001 of a second,"
+    print "Assuming you can get step accuracy to 0.001 of a second,"
     print "Actual step time rounded to", round(timePerStep, 4), "seconds"
     
     actualTimeTaken = round(timePerStep, 4) * stepsNeeded

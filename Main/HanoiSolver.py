@@ -90,7 +90,26 @@ def GatherInputs():
     timePerStep = timeBetween/stepsNeeded
 
     print "Each step should take", timePerStep, "Seconds"
+
+    print "Assuming you can get step accuracy to 0.0001 of a second,"
+    print "Actual step time rounded to", round(timePerStep, 4), "seconds"
+    
+    actualTimeTaken = round(timePerStep, 4) * stepsNeeded
+    print "Actual time taken is", actualTimeTaken
+    
+    error = (timeBetween - actualTimeTaken)/timeBetween
+    print "This would give your project an error of", "{0:.6f}%".format(math.fabs(error)*100)
+    print "This results in a time variance of", math.fabs(timeBetween - actualTimeTaken), "Seconds"
+    print "which is", (math.fabs(timeBetween - actualTimeTaken) / 60)/60, "Hours"
+
+    if error > 0:
+        print "The puzzle will finish", (math.fabs(timeBetween - actualTimeTaken) / 60)/60, "Hours late"
+    else:
+        print "The puzzle will finish", (math.fabs(timeBetween - actualTimeTaken) / 60)/60, "Hours early"
+    
     print "\n\n\n"
+
+    
 
     
 if __name__ == '__main__':
